@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Organizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">F</div>
+                <div>
+                    <h1>FileFlow</h1>
+                    <p>Smart File Organizer</p>
+                </div>
+            </div>
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Ready to organize
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <span class="eyebrow">YOUR FILES, IN PERFECT ORDER</span>
+                <h2>A cleaner workspace<br>starts <span>here.</span></h2>
+                <p class="hero-description">
+                    Organize cluttered folders in seconds. Let FileFlow
+                    sort your files into categories automatically.
+                </p>
+            </section>
+
+            <section class="organizer-card">
+                <div class="card-heading">
+                    <div>
+                        <h3>Choose your folder</h3>
+                        <p>Select the folder you want to organize.</p>
+                    </div>
+                    <div class="folder-symbol">📁</div>
+                </div>
+
+                <div class="folder-picker">
+                    <div class="folder-path">
+                        <span class="path-icon">⌁</span>
+                        <span id="folder-path">No folder selected</span>
+                    </div>
+                    <button id="browse-btn" class="secondary-button">
+                        Browse folder
+                    </button>
+                </div>
+
+                <div class="category-section">
+                    <p class="section-label">FILES WILL BE SORTED INTO</p>
+                    <div class="category-grid">
+                        <div class="category-item">
+                            <span>🖼️</span><span>Images</span>
+                        </div>
+                        <div class="category-item">
+                            <span>📄</span><span>Documents</span>
+                        </div>
+                        <div class="category-item">
+                            <span>🎬</span><span>Videos</span>
+                        </div>
+                        <div class="category-item">
+                            <span>🎵</span><span>Audio</span>
+                        </div>
+                        <div class="category-item">
+                            <span>📦</span><span>Archives</span>
+                        </div>
+                        <div class="category-item">
+                            <span>💻</span><span>Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="safety-note">
+                    <span>🛡️</span>
+                    <p>
+                        <strong>Files stay on your computer.</strong>
+                        Choose a test folder first. Files will be moved
+                        into category folders.
+                    </p>
+                </div>
+
+                <button id="organize-btn" class="primary-button" disabled>
+                    <span>✦</span> Organize my files <span>→</span>
+                </button>
+
+                <div id="result" class="result-message" role="status" hidden></div>
+            </section>
+        </main>
+
+        <footer>
+            <span>FILEFLOW</span>
+            <span>Simple. Smart. Organized.</span>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
