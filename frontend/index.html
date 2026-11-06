@@ -16,10 +16,16 @@
                     <p>Smart File Organizer</p>
                 </div>
             </div>
-            <div class="status-badge">
-                <span class="status-dot"></span>
-                Ready to organize
-            </div>
+           <div class="header-actions">
+    <div class="status-badge">
+        <span class="status-dot"></span>
+        Ready to organize
+    </div>
+
+    <button id="theme-toggle" class="theme-button">
+        ☀️ Light Mode
+    </button>
+</div> 
         </header>
 
         <main>
@@ -87,8 +93,107 @@
                 <button id="organize-btn" class="primary-button" disabled>
                     <span>✦</span> Organize my files <span>→</span>
                 </button>
+                <div id="progress-container" hidden>
+                     <div class="progress-info">
+                          <span>Organizing files...</span>
+                          <span id="progress-percent">0%</span>
+                     </div>
 
-                <div id="result" class="result-message" role="status" hidden></div>
+                     <div class="progress-track">
+                          <div id="progress-bar" class="progress-fill"></div>
+                     </div>
+                </div>
+
+              <button id="preview-btn" class="secondary-button" disabled>
+              👁 Preview files
+              </button>
+              <button id="statistics-btn" class="secondary-button" disabled>
+                📊 File Statistics
+              </button>
+
+            <div id="preview-result" class="result-message" hidden></div>
+              <section id="statistics-section" class="statistics-section" hidden>
+                  <h3>📊 File Statistics</h3>
+
+                  <div class="statistics-grid">
+                        <div class="stat-card">
+                             <span>Total Files</span>
+                             <strong id="stat-total-files">0</strong>
+                         </div>
+
+                         <div class="stat-card">
+                             <span>Total Storage</span>
+                             <strong id="stat-total-size">0 MB</strong>
+                         </div>
+
+                         <div class="stat-card">
+                             <span>Largest File</span>
+                             <strong id="stat-largest-file">None</strong>
+                         </div>
+
+                         <div class="stat-card">
+                             <span>Largest File Size</span>
+                             <strong id="stat-largest-size">0 MB</strong>
+                         </div>
+                  </div>
+
+                  <h4>Category-wise Storage</h4>
+                  <div id="category-statistics"></div>
+             </section>
+             <div id="result" class="result-message" role="status" hidden></div>
+             <section id="history-section" class="history-section">
+    <h3>📜 Activity History</h3>
+    <button id="clear-history-btn" class="clear-history-btn">
+    🗑️ Clear History
+</button>
+<button id="duplicate-check-btn" class="duplicate-check-btn">
+    🔍 Find Duplicate Files
+</button>
+
+<div id="duplicate-results"></div>
+<div class="search-files-section">
+    <h3>🔎 Search Files</h3>
+
+    <div class="search-input-group">
+        <input
+            type="text"
+            id="search-keyword"
+            placeholder="Enter filename to search..."
+        >
+
+        <button id="search-files-btn">
+            Search
+        </button>
+    </div>
+
+    <div id="search-results"></div>
+</div>
+
+    <div id="history-list">
+        <p>No activity history yet.</p>
+    </div>
+</section>
+             <div id="preview-panel" class="preview-panel" hidden>
+    <h3>📋 File Preview</h3>
+
+    <div id="preview-summary"></div>
+
+    <div class="preview-table-container">
+        <table class="preview-table">
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th>Category</th>
+                    <th>Size</th>
+                </tr>
+            </thead>
+            <tbody id="preview-list"></tbody>
+        </table>
+    </div>
+</div>
+               <button id="undo-btn" class="secondary-button" disabled hidden>
+                ↶ Undo organization
+               </button>
             </section>
         </main>
 
